@@ -22,6 +22,6 @@ public class ProductCategory implements Serializable {
     private String name;
     private String description;
 
-    @OneToMany(mappedBy = "productCategory")
+    @OneToMany(mappedBy = "productCategories")
     private Set<Product> products = new HashSet<>();
 }

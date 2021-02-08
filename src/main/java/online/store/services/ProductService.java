@@ -1,6 +1,6 @@
 package online.store.services;
 
-import online.store.entities.ProductEntity;
+import online.store.model.Product;
 import online.store.repositories.ProductDetailedService;
 import online.store.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class ProductService implements ProductDetailedService {
         @Autowired
         private ProductRepository productRepository;
 
-        public List<ProductEntity> readAllProduct(){
+        public List<Product> readAllProduct(){
            return productRepository.findAll();
         }
 

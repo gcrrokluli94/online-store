@@ -1,6 +1,6 @@
 package online.store.controllers;
 
-import online.store.entities.ProductEntity;
+import online.store.model.Product;
 import online.store.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +19,13 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<ProductEntity>> getProduct(){
+    public ResponseEntity<List<Product>> getProduct(){
         return ResponseEntity.ok().body(productService.readAllProduct());
     }
 
     @PostMapping("/user")
-    public ResponseEntity<ProductEntity> saveProduct() {
-        return ResponseEntity.ok().body(new ProductEntity());
+    public ResponseEntity<Product> saveProduct() {
+        return ResponseEntity.ok().body(new Product());
     }
 
 

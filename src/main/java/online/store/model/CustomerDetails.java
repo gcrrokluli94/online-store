@@ -30,6 +30,6 @@ public class CustomerDetails implements Serializable {
     @OneToOne
     private User user;
 
-    @OneToMany(mappedBy = "customer_details")
+    @OneToMany(mappedBy = "customerDetails")
     private Set<ShoppingCart> carts = new HashSet<>();
 }
