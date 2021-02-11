@@ -34,5 +34,5 @@ public class User implements Serializable {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
-    private Set<ShoppingCart> carts = new HashSet<>();
+    private Set<Order> carts = new HashSet<>();
 }

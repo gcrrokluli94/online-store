@@ -20,7 +20,11 @@ public class Address implements Serializable {
     private String clientAddress;
     private String city;
     private String country;
+    private String zipCode;
 
     @OneToOne(mappedBy = "address")
     private User user;
+
+    @OneToOne(mappedBy = "address")
+    private Client client;
 }

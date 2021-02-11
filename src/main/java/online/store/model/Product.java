@@ -28,7 +28,7 @@ public class Product implements Serializable {
     private ProductCategory productCategories;
 
     @OneToMany(mappedBy ="product")
-    private Set<Order> order = new HashSet<>();
+    private Set<OrderLine> orderLine = new HashSet<>();
 
     private BigDecimal price;
 
