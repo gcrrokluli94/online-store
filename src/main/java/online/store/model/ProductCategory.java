@@ -10,10 +10,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
 @Entity
-@Table(name = "product_category")
 public class ProductCategory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

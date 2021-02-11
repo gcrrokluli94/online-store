@@ -10,11 +10,8 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
 @Entity
-@Table(name="product_order")
-public class ProductOrder implements Serializable {
+public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,9 +21,11 @@ public class ProductOrder implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "productOrders", allowSetters = true)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "orders", allowSetters = true)
+    @JoinColumn(name = "cart_id")
     private ShoppingCart cart;
 }

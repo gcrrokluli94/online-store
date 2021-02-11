@@ -7,14 +7,13 @@ import online.store.model.enumeration.ProductType;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
 @Entity
-@Table(name="product")
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,16 +24,20 @@ public class Product implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value="products", allowSetters = true)
+    @JoinColumn(name = "product_category_id")
     private ProductCategory productCategories;
+
+    @OneToMany(mappedBy ="product")
+    private Set<Order> order = new HashSet<>();
 
     private BigDecimal price;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "product_type", nullable = false)
     private ProductType productType;
 
     private String imageUrl;
 
     @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
 }

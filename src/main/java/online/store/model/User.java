@@ -10,10 +10,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Entity
-@Table(name = "user")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,9 +20,12 @@ public class User implements Serializable {
 
     private String password;
 
-    private String address;
     private String firstName;
     private String lastName;
+
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     @ManyToMany
     @JoinTable(name = "user_role",
@@ -33,4 +33,6 @@ public class User implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
+    @OneToMany(mappedBy = "user")
+    private Set<ShoppingCart> carts = new HashSet<>();
 }

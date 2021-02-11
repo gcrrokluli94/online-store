@@ -15,10 +15,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Entity
-@Table(name="shopping_cart")
 public class ShoppingCart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,19 +24,18 @@ public class ShoppingCart implements Serializable {
     private Instant placedDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
     private OrderStatus orderStatus;
 
     private BigDecimal totalPrice;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "payment_method", nullable = false)
     private PaymentMethod paymentMethod;
 
     @OneToMany(mappedBy = "cart")
-    private Set<ProductOrder> orders = new HashSet<>();
+    private Set<Order> orders = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = "carts", allowSetters = true)
-    private CustomerDetails customerDetails;
+    @JoinColumn(name = "user_id")
+    private User user;
 }
