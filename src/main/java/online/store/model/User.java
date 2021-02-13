@@ -35,4 +35,7 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "user")
     private Set<Order> orders = new HashSet<>();
+
+    @OneToOne(mappedBy = "user")
+    private Cart cart;
 }
