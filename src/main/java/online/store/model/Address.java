@@ -24,7 +24,4 @@ public class Address implements Serializable {
 
     @OneToOne(mappedBy = "address")
     private User user;
-
-    @OneToOne(mappedBy = "address")
-    private Client client;
 }
