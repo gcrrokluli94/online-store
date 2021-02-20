@@ -2,7 +2,6 @@ package online.store.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,5 +15,5 @@ public class Cart implements Serializable {
     private User user;
 
     @OneToMany(mappedBy = "cart")
-    private Set<OrderLine> orderLines = new HashSet<>();
+    private Set<OrderLine> orderLines;
 }

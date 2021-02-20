@@ -7,7 +7,6 @@ import online.store.model.enumeration.ProductType;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -28,7 +27,7 @@ public class Product implements Serializable {
     private ProductCategory productCategories;
 
     @OneToMany(mappedBy ="product")
-    private Set<OrderLine> orderLine = new HashSet<>();
+    private Set<OrderLine> orderLine;
 
     private BigDecimal price;
 

@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -32,7 +31,7 @@ public class Order implements Serializable {
     private PaymentMethod paymentMethod;
 
     @OneToMany(mappedBy = "order")
-    private Set<OrderLine> orderLines = new HashSet<>();
+    private Set<OrderLine> orderLines;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "orders", allowSetters = true)

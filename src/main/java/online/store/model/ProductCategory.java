@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -20,5 +19,5 @@ public class ProductCategory implements Serializable {
     private String description;
 
     @OneToMany(mappedBy = "productCategories")
-    private Set<Product> products = new HashSet<>();
+    private Set<Product> products;
 }

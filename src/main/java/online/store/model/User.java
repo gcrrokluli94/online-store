@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -31,10 +30,10 @@ public class User implements Serializable {
     @JoinTable(name = "user_role",
             joinColumns =@JoinColumn(name = "user_id"),
             inverseJoinColumns =@JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
     @OneToMany(mappedBy = "user")
-    private Set<Order> orders = new HashSet<>();
+    private Set<Order> orders;
 
     @OneToOne(mappedBy = "user")
     private Cart cart;
