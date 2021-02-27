@@ -23,10 +23,4 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.readAllProduct());
     }
 
-    @PostMapping("/user")
-    public ResponseEntity<Product> saveProduct() {
-        return ResponseEntity.ok().body(new Product());
-    }
-
-
 }
