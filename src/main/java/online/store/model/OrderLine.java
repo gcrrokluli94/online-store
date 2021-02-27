@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 public class OrderLine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "orderLine_Id")
     private Long id;
 
     private Integer quantity;

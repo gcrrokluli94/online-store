@@ -13,10 +13,12 @@ import java.util.Set;
 public class ProductCategory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_category_Id")
     private Long id;
 
     private String name;
     private String description;
+    private int masterCategory;
 
     @OneToMany(mappedBy = "productCategories")
     private Set<Product> products;
