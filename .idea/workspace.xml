@@ -31,35 +31,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21ba0523-79f9-4541-90d4-55340d0bad4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/OnlineStoreApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/config/TestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/controllers/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Author.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/OrderLine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/ProductCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/enumeration/OrderStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/enumeration/PaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/model/enumeration/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/repositories/ProductDetailedService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/repositories/ProductRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/online/store/services/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/online/store/OnlineStoreApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="21ba0523-79f9-4541-90d4-55340d0bad4d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
