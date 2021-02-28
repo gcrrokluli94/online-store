@@ -2,6 +2,7 @@ package online.store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
+import online.store.model.enumeration.ProductStatus;
 import online.store.model.enumeration.ProductType;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ import java.util.Set;
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_Id")
     private Long id;
 
     private String productName;
@@ -29,14 +31,17 @@ public class Product implements Serializable {
     @OneToMany(mappedBy ="product")
     private Set<OrderLine> orderLine;
 
-    private BigDecimal price;
+    private Double price;
 
     @Enumerated(EnumType.STRING)
     private ProductType productType;
 
     private String imageUrl;
 
+    @Enumerated(EnumType.STRING)
+    private ProductStatus productStatus;
+
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "products")
     private Author author;
 }

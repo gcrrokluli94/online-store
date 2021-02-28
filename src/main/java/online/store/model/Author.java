@@ -13,6 +13,7 @@ import java.util.Set;
 public class Author implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "author_Id")
     private Long id;
 
     private String firstName;
