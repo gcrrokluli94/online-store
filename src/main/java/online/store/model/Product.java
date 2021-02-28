@@ -31,7 +31,7 @@ public class Product implements Serializable {
     @OneToMany(mappedBy ="product")
     private Set<OrderLine> orderLine;
 
-    private BigDecimal price;
+    private Double price;
 
     @Enumerated(EnumType.STRING)
     private ProductType productType;
@@ -42,6 +42,6 @@ public class Product implements Serializable {
     private ProductStatus productStatus;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "products")
     private Author author;
 }
