@@ -1,7 +1,7 @@
 package online.store.model.enumeration;
 
 public enum ProductStatus {
-    NeShitje, JoNeShitje
+    IN_STOCK, OUT_OF_STOCK
 }
 
 
