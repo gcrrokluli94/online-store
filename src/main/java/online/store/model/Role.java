@@ -13,6 +13,9 @@ import java.util.Set;
 public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private Long id;
+
     private String name;
 
     @ManyToMany(mappedBy = "roles")

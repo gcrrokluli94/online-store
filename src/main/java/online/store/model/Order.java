@@ -15,9 +15,11 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="orders")
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Long id;
 
     private LocalDateTime placedDate;
@@ -25,7 +27,7 @@ public class Order implements Serializable {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;

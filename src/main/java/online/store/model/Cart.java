@@ -8,6 +8,7 @@ import java.util.Set;
 public class Cart implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cart_id")
     private Long id;
 
     @OneToOne

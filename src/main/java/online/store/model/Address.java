@@ -10,9 +10,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 public class Address implements Serializable {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
     private Long id;
 
     private String phone;
