@@ -1,12 +1,14 @@
 package online.store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -22,20 +24,32 @@ public class User implements Serializable {
 
     private String firstName;
     private String lastName;
+    private String email;
+
+    private boolean isAccountLocked;
+    private boolean isCredentialsExpired;
+    private boolean isEnabled;
+
 
     @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @ManyToMany
+//    @ManyToMany
+//    @JoinColumn(name = "role_id")
+//    private Role role;
+
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
             joinColumns =@JoinColumn(name = "user_id"),
             inverseJoinColumns =@JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user" , fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Order> orders;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Cart cart;
 }

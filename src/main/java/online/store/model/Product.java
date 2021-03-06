@@ -1,5 +1,6 @@
 package online.store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import online.store.model.enumeration.ProductStatus;
@@ -17,18 +18,18 @@ import java.util.Set;
 public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_Id")
+    @Column(name = "product_id")
     private Long id;
 
     private String productName;
     private String description;
 
     @ManyToOne
-    @JsonIgnoreProperties(value="products", allowSetters = true)
-    @JoinColumn(name = "product_category_id")
-    private ProductCategory productCategories;
+    @JoinColumn(name = "productCategoryId")
+    private ProductCategory productCategory;
 
-    @OneToMany(mappedBy ="product")
+    @OneToMany(mappedBy ="product" , fetch = FetchType.LAZY )
+    @JsonIgnore
     private Set<OrderLine> orderLine;
 
     private Double price;
@@ -42,6 +43,7 @@ public class Product implements Serializable {
     private ProductStatus productStatus;
 
     @ManyToOne
-    @JoinColumn(name = "products")
+    @JoinColumn(name = "authorId")
     private Author author;
+
 }

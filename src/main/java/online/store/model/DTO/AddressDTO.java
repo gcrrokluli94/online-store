@@ -9,23 +9,20 @@ import online.store.model.Author;
 import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
 import online.store.model.enumeration.ProductType;
-import java.math.BigDecimal;
-
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ProductDTO {
+public class AddressDTO {
 
     @NotNull
-    private String productName;
-    private String description;
-    private ProductCategory productCategory;
-    private Double price;
-    private ProductType productType;
-    private String imageUrl;
-    private ProductStatus productStatus;
-    private Author author;
+    private String phone;
+    private String shippingAddress;
+    private String clientAddress;
+    private String city;
+    private String country;
+    private String zipCode;
+
 
 }

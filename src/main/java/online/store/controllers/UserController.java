@@ -21,11 +21,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/user")
-    public ResponseEntity<User> postUser(@RequestBody @Valid final UserDTO userDTO) throws NotFoundException {
-        User user = this.userService.saveTheUser(userDTO);
-        return ResponseEntity.ok(user);
-    }
+//    @PostMapping("/user")
+//    public ResponseEntity<User> postUser(@RequestBody @Valid final UserDTO userDTO) throws NotFoundException {
+//        User user = this.userService.saveTheUser(userDTO);
+//        return ResponseEntity.ok(user);
+//    }
 
     @PutMapping("/user/{userId}/")
     public ResponseEntity<User> putUser(@RequestBody final UserDTO userDTO, @PathVariable("userId") final Long userId) throws NotFoundException {

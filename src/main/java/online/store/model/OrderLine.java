@@ -7,26 +7,26 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class OrderLine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderLine_Id")
+    @Column(name = "orderLine_id")
     private Long id;
 
     private Integer quantity;
     private BigDecimal totalPrice;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "orderLines", allowSetters = true)
     @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "orders", allowSetters = true)
+    //@JsonIgnoreProperties(value = "orders", allowSetters = true)
     @JoinColumn(name = "order_id")
     private Order order;
 

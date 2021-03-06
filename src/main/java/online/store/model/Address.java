@@ -1,5 +1,6 @@
 package online.store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,7 +14,7 @@ public class Address implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_Id")
+    @Column(name = "address_id")
     private Long id;
 
     private String phone;
@@ -23,6 +24,7 @@ public class Address implements Serializable {
     private String country;
     private String zipCode;
 
-    @OneToOne(mappedBy = "address")
+    @OneToOne(mappedBy = "address",  fetch = FetchType.LAZY)
+    @JsonIgnore
     private User user;
 }

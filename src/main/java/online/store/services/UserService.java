@@ -3,6 +3,7 @@ package online.store.services;
 
 import lombok.extern.slf4j.Slf4j;
 
+import lombok.val;
 import online.store.model.DTO.UserDTO;
 import online.store.model.Role;
 import online.store.model.User;
@@ -29,23 +30,21 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public User saveTheUser(final UserDTO userDTO) {
-
-        User user = new User();
-
-        Set<Role> roles = userDTO.getRoleIds().stream().map((roleId) -> {
-           return this.roleRepository.findById(roleId).orElseThrow(() -> new NotFoundException("Roli me id e dhene nuk gjendet"));
-        }).collect(Collectors.toSet());
-
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
-
-        user.setLogin(userDTO.getLogin());
-        user.setPassword(userDTO.getPassword());
-        user.setRoles(roles);
-        UserService.log.info("User saved successfully");
-        return this.userRepository.save(user);
-    }
+//    public User saveTheUser(final UserDTO userDTO) {
+//        User user = new User();
+//        Set<Role> roles = userDTO.getRoleIds().stream().map((roleId) -> {
+//            return this.roleRepository.findById(roleId).orElseThrow(()->new NotFoundException("Roli nuk gjendet me kete Id"));
+//        }).collect(Collectors.toSet());
+//
+//        user.setFirstName(userDTO.getFirstName());
+//        user.setLastName(userDTO.getLastName());
+//
+//        user.setLogin(userDTO.getLogin());
+//        user.setPassword(userDTO.getPassword());
+//        user.setRoles(roles);
+//        UserService.log.info("User saved successfully");
+//        return this.userRepository.save(user);
+//    }
 
     public User updateTheUser(final UserDTO userDTO, final Long userId) {
 
