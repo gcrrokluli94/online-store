@@ -25,4 +25,10 @@ public class ProductCategoryController {
         ProductCategory productCategory = this.productCategoryService.saveProductCategory(productCategoryDTO);
         return ResponseEntity.ok(productCategory);
     }
+
+    @PostMapping("/mastercategory")
+    public ResponseEntity<ProductCategory> postMasterProductCategory(@RequestBody @Valid final ProductCategoryDTO productCategoryDTO) throws NotFoundException {
+        ProductCategory productCategory = this.productCategoryService.saveMasterProductCategory(productCategoryDTO);
+        return ResponseEntity.ok(productCategory);
+    }
 }

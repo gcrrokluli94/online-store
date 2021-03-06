@@ -24,6 +24,13 @@ public class ProductCategoryService {
         productCategory.setMasterCategory(productCategoryDTO.getMasterCategory());
         return productCategoryRepository.save(productCategory);
     }
+    public ProductCategory saveMasterProductCategory(final ProductCategoryDTO productCategoryDTO){
+        ProductCategory productCategory = new ProductCategory();
+        productCategory.setName(productCategoryDTO.getName());
+        productCategory.setDescription(productCategoryDTO.getDescription());
+        return productCategoryRepository.save(productCategory);
+    }
+
 
     public List<ProductCategory> findAll(){
         return productCategoryRepository.findAll();
