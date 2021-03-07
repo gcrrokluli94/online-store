@@ -36,7 +36,7 @@ public class ProductService {
     }
 
     public List<Product> findAvailableProduct() {
-        return productRepository.findAvaiableProduct();
+        return productRepository.findAvailableProduct();
     }
 
 

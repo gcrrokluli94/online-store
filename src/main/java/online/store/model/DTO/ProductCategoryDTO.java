@@ -12,5 +12,5 @@ import lombok.ToString;
 public class ProductCategoryDTO {
     private String name;
     private String description;
-    private int masterCategory;
+    private Long masterCategoryId;
 }
