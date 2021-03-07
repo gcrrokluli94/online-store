@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Optional;
 import java.util.Set;
 
 @Getter
@@ -19,6 +18,7 @@ public class Role implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
     private Long id;
+
     private String name;
 
     @ManyToMany(mappedBy = "roles",  fetch = FetchType.LAZY)

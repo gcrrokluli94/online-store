@@ -1,31 +1,22 @@
 package online.store.model.DTO;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import online.store.model.Author;
-import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
 import online.store.model.enumeration.ProductType;
-import java.math.BigDecimal;
-
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class ProductDTO {
-
-    @NotNull
+    private Long categoryId;
+    private Long authorId;
     private String productName;
     private String description;
-    private ProductCategory productCategory;
     private Double price;
-    private ProductType productType;
-    private String imageUrl;
     private ProductStatus productStatus;
-    private Author author;
-
+    private ProductType productType;
 }

@@ -7,9 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Set;
 
 @Repository
-public interface ProductCategoryRepository  extends JpaRepository<ProductCategory, Long> {
-
-
-    Set<ProductCategory> findById(ProductCategory productCategory);
-
+public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 }

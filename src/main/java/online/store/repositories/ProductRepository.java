@@ -2,7 +2,6 @@ package online.store.repositories;
 
 
 import online.store.model.Product;
-import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -8,7 +8,6 @@ import online.store.model.enumeration.ProductType;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Set;
 
 @Data
@@ -25,10 +24,10 @@ public class Product implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "productCategoryId")
+    @JoinColumn(name = "product_category_id")
     private ProductCategory productCategory;
 
-    @OneToMany(mappedBy ="product" , fetch = FetchType.LAZY )
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<OrderLine> orderLine;
 
@@ -43,7 +42,7 @@ public class Product implements Serializable {
     private ProductStatus productStatus;
 
     @ManyToOne
-    @JoinColumn(name = "authorId")
+    @JoinColumn(name = "author_id")
     private Author author;
 
 }

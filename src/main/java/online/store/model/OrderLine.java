@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -19,7 +18,7 @@ public class OrderLine implements Serializable {
     private Long id;
 
     private Integer quantity;
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

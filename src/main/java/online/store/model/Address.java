@@ -11,7 +11,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 public class Address implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id")

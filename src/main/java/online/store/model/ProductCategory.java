@@ -20,9 +20,16 @@ public class ProductCategory implements Serializable {
 
     private String name;
     private String description;
-    private int masterCategory;
 
     @OneToMany(mappedBy = "productCategory" , fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Product> products;
+
+    @ManyToOne
+    @JoinColumn(name="master_category")
+    private ProductCategory master;
+
+    @OneToMany(mappedBy = "master", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<ProductCategory> childCategories;
 }

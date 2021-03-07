@@ -19,7 +19,7 @@ import java.util.Set;
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_Id")
+    @Column(name = "order_id")
     private Long id;
 
     private LocalDateTime placedDate;
