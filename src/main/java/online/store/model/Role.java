@@ -14,7 +14,9 @@ public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long role_id;
+    @Column(name = "role_id")
+    private Long id;
+
     private String name;
 
     @ManyToMany(mappedBy = "roles")

@@ -7,7 +7,6 @@ import online.store.model.enumeration.PaymentMethod;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -19,7 +18,7 @@ import java.util.Set;
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_Id")
+    @Column(name = "order_id")
     private Long id;
 
     private LocalDateTime placedDate;
@@ -27,7 +26,7 @@ public class Order implements Serializable {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
