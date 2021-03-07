@@ -1,6 +1,6 @@
 package online.store.controllers;
 
-import online.store.errors.NotFoundException;
+import online.store.model.errors.NotFoundException;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
 import online.store.model.enumeration.ProductStatus;

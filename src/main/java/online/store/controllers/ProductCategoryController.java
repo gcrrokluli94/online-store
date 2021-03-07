@@ -1,8 +1,8 @@
 package online.store.controllers;
 
-import online.store.errors.NotFoundException;
 import online.store.model.DTO.ProductCategoryDTO;
 import online.store.model.ProductCategory;
+import online.store.model.errors.NotFoundException;
 import online.store.services.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
