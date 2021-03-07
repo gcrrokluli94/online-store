@@ -24,4 +24,5 @@ public class Author implements Serializable {
     @OneToMany(mappedBy = "author" , fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Product> products;
+
 }

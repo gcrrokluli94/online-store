@@ -25,7 +25,7 @@ public class OrderLine implements Serializable {
     private Product product;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "orders", allowSetters = true)
+    //@JsonIgnoreProperties(value = "orders", allowSetters = true)
     @JoinColumn(name = "order_id")
     private Order order;
 

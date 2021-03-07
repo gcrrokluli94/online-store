@@ -19,10 +19,20 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
                                                 final ProductType productType,
                                                 final String productCategory);
 
+    List<Product> findByProductNameOrPriceOrProductTypeOrProductCategoryName(final String productName,
+                                                                                final Double productPrice,
+                                                                                final ProductType productType,
+                                                                                final String productCategory);
+
+    List<Product> findByProductName(final String productName);
 
 
-    @Query(value = "SELECT * FROM product  WHERE p.product_status ='IN_STOK'", nativeQuery = true)
-    List<Product> findAvailableProduct();
+    @Query(value = "SELECT * FROM product p WHERE p.product_name =:productName", nativeQuery = true)
+    List<Product> findByProductNameNativeQuery(final String productName);
+
+
+    @Query(value = "SELECT p.* FROM product p WHERE p.product_status ='IN_STOCK'", nativeQuery = true)
+    List<Product> findAvaiableProduct();
 
 
 }

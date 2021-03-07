@@ -4,6 +4,7 @@ import online.store.model.Author;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
 import online.store.model.constants.ErrorMessages;
+import online.store.model.enumeration.DirectionEnum;
 import online.store.model.enumeration.ProductType;
 import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
@@ -12,6 +13,9 @@ import online.store.repositories.AuthorRepository;
 import online.store.repositories.ProductCategoryRepository;
 import online.store.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,7 +40,7 @@ public class ProductService {
     }
 
     public List<Product> findAvailableProduct() {
-        return productRepository.findAvailableProduct();
+        return productRepository.findAvaiableProduct();
     }
 
 
@@ -85,6 +89,24 @@ public class ProductService {
         Product product = this.productRepository.findById(productId)
                 .orElseThrow(() -> new NotFoundException(ErrorMessages.ID_NOT_FOUND_EXCEPTION));
         product.setProductStatus(productStatus.DELETED);
+    }
+
+    public List<Product> findProductForDifferentAttributes(final String productName,
+                                                           final Double productPrice,
+                                                           final ProductType productType,
+                                                           final String productCategory) {
+        return productRepository.findByProductNameOrPriceOrProductTypeOrProductCategoryName(productName, productPrice, productType, productCategory);
+    }
+
+    public List<Product> findByProductName( final String productName){
+        return productRepository.findByProductName(productName);
+    }
+
+    public Page<Product> readProductPageByPage(final Integer page, final Integer count, final DirectionEnum direction, final String fields) {
+        if (direction == null || fields == null)
+            return this.productRepository.findAll(PageRequest.of(page, count));
+        return this.productRepository.findAll(PageRequest.of(page, count, Sort.Direction.valueOf(direction.name()), fields));
+
     }
 
 }

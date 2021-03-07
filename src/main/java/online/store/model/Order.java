@@ -1,6 +1,6 @@
 package online.store.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import online.store.model.enumeration.OrderStatus;
 import online.store.model.enumeration.PaymentMethod;
@@ -10,7 +10,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -31,11 +32,11 @@ public class Order implements Serializable {
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
-    @OneToMany(mappedBy = "order")
-    private Set<OrderLine> orderLines;
+    @OneToMany(mappedBy = "order",  fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<OrderLine> orderLine;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "orders", allowSetters = true)
     @JoinColumn(name = "user_id")
     private User user;
 }

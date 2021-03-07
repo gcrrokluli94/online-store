@@ -1,6 +1,7 @@
 package online.store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import online.store.model.enumeration.ProductStatus;
 import online.store.model.enumeration.ProductType;
@@ -43,4 +44,5 @@ public class Product implements Serializable {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
 }
