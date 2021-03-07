@@ -21,18 +21,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @PostMapping("/user")
-//    public ResponseEntity<User> postUser(@RequestBody @Valid final UserDTO userDTO) throws NotFoundException {
-//        User user = this.userService.saveTheUser(userDTO);
-//        return ResponseEntity.ok(user);
-//    }
 
-    @PutMapping("/user/{userId}/")
-    public ResponseEntity<User> putUser(@RequestBody final UserDTO userDTO, @PathVariable("userId") final Long userId) throws NotFoundException {
+
+    @PostMapping("/newUser")
+    public ResponseEntity<User> postUser(@RequestBody @Valid final UserDTO userDTO) throws NotFoundException {
+        User user = this.userService.saveTheUser(userDTO);
+        return ResponseEntity.ok(user);
+    }
+
+    @PutMapping("/updateUser/{userId}")
+    public ResponseEntity<User> updateUser(@RequestBody final UserDTO userDTO,  @PathVariable("userId") final Long userId) throws NotFoundException {
         User user = this.userService.updateTheUser(userDTO, userId);
         return ResponseEntity.ok(user);
-
     }
+
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
@@ -45,6 +47,12 @@ public class UserController {
         User user = this.userService.readUserById(userId);
         return ResponseEntity.ok(user);
     }
+    @PutMapping("/disableUser/{userId}")
+    public ResponseEntity<User> disableUser( @PathVariable("userId") final Long userId) throws NotFoundException {
+        User user = this.userService.blockTheUserStatus(userId);
+        return ResponseEntity.ok(user);
+    }
+
 
 }
 

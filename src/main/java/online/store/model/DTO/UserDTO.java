@@ -16,20 +16,13 @@ import java.util.List;
 public class UserDTO {
 
     @NotNull
-    @NotEmpty(message = "Required field")
     private String login;
     private String firstName;
     private String lastName;
     private String password;
     private String email;
-
-    private boolean isAccountLocked;
-    private boolean isCredentialsExpired;
-    private boolean isEnabled;
-
-    private Role rolesIDs;
-    private Address address;
-
+    private List<Long> roleId;
+    private AddressDTO addressDTO;
 
 }
 

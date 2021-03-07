@@ -17,17 +17,13 @@ public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "role_Id")
+    @Column(name = "role_id")
     private Long id;
     private String name;
-
-
 
     @ManyToMany(mappedBy = "roles",  fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<User> users;
 
-    public Optional<Object> stream() {
-        return null;
-    }
+
 }

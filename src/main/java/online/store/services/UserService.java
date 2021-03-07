@@ -3,7 +3,7 @@ package online.store.services;
 
 import lombok.extern.slf4j.Slf4j;
 
-import lombok.val;
+import online.store.model.Address;
 import online.store.model.DTO.UserDTO;
 import online.store.model.Role;
 import online.store.model.User;
@@ -30,21 +30,29 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-//    public User saveTheUser(final UserDTO userDTO) {
-//        User user = new User();
-//        Set<Role> roles = userDTO.getRoleIds().stream().map((roleId) -> {
-//            return this.roleRepository.findById(roleId).orElseThrow(()->new NotFoundException("Roli nuk gjendet me kete Id"));
-//        }).collect(Collectors.toSet());
-//
-//        user.setFirstName(userDTO.getFirstName());
-//        user.setLastName(userDTO.getLastName());
-//
-//        user.setLogin(userDTO.getLogin());
-//        user.setPassword(userDTO.getPassword());
-//        user.setRoles(roles);
-//        UserService.log.info("User saved successfully");
-//        return this.userRepository.save(user);
-//    }
+    @Autowired
+    private AddressService addressService;
+
+
+    public User saveTheUser(final UserDTO userDTO) {
+        User user = new User();
+        Set<Role> roles = userDTO.getRoleId().stream().map((roleId) ->
+             this.roleRepository.findById(roleId).orElseThrow(() -> new NotFoundException("Roli me id e dhene nuk gjendet"))
+        ).collect(Collectors.toSet());
+        user.setRoles(roles);
+        Address address = this.addressService.saveTheAddress(userDTO.getAddressDTO());
+        user.setAddress(address);
+        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDTO.getLastName());
+        user.setEmail(userDTO.getEmail());
+        user.setLogin(userDTO.getLogin());
+        user.setPassword(userDTO.getPassword());
+        user.setEnabled(true);
+        user.setAccountLocked(false);
+        user.setCredentialsExpired(false);
+        UserService.log.info("User saved successfully");
+        return this.userRepository.save(user);
+    }
 
     public User updateTheUser(final UserDTO userDTO, final Long userId) {
 
@@ -67,5 +75,13 @@ public class UserService {
                 .orElseThrow(() -> new NotFoundException(ErrorMessages.ID_NOT_FOUND_EXCEPTION));
     }
 
+    public User blockTheUserStatus( final Long userId) {
+
+        User user = this.userRepository.findById(userId)
+                .orElseThrow(() -> new NotFoundException(ErrorMessages.ID_NOT_FOUND_EXCEPTION));
+        user.setEnabled(false);
+       UserService.log.info("User status modified tu noitEnable");
+        return user;
+    }
 
 }

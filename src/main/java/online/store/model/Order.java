@@ -1,14 +1,12 @@
 package online.store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import online.store.model.enumeration.OrderStatus;
 import online.store.model.enumeration.PaymentMethod;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -29,7 +27,7 @@ public class Order implements Serializable {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private BigDecimal totalPrice;
+    private Double totalPrice;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
@@ -39,7 +37,6 @@ public class Order implements Serializable {
     private Set<OrderLine> orderLine;
 
     @ManyToOne
-    //@JsonIgnoreProperties(value = "orders", allowSetters = true)
     @JoinColumn(name = "user_id")
     private User user;
 }
