@@ -1,11 +1,8 @@
 package online.store.controllers;
 
-import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
-import online.store.model.ProductCategory;
 import online.store.model.constants.DirectionEnum;
 import online.store.model.enumeration.ProductType;
-import online.store.model.errors.NotFoundException;
 import online.store.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -43,7 +40,7 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.findProductDifferentAttributes(productName, productPrice,productType,productCategory));
     }
 
-    @GetMapping("/filter-products-diferent-attributs")
+    @GetMapping("/filter-products-different-attributs")
     public ResponseEntity<List<Product>> getProductSearchBySelectingDifferentAttribut(@RequestParam("productName") final String productName,
                                                                     @RequestParam("productPrice") final Double productPrice,
                                                                     @RequestParam("productType") final ProductType productType,
@@ -62,21 +59,10 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.findByProductNameNAtiveQuery(productName));
     }
 
-//    @GetMapping("/product/page")
-//    public ResponseEntity<Page<Product>> getProductSearchByPage(@RequestParam("page") final Integer page, @RequestParam(value = "count") final Integer count, @RequestParam(value = "direction",required = false) DirectionEnum direction, @RequestParam(value = "field",required = false) String  fields) {
-//        Page<Product> userPage = this.productService.readProductPageByPage(page - 1, 2, DirectionEnum.ASC, fields);
-//        return ResponseEntity.ok(userPage);
-//    }
     @GetMapping("/product/page")
     public ResponseEntity<Page<Product>> getProductSearchByPage(@RequestParam("page") final Integer page, @RequestParam(value = "count") final Integer count, @RequestParam(value = "direction") DirectionEnum direction, @RequestParam(value = "field",required = false) String  fields) {
             Page<Product> userPage = this.productService.readProductPageByPage(page - 1, 3, DirectionEnum.ASC, fields);
             return ResponseEntity.ok(userPage);
 }
 
-
-    @PostMapping("/product")
-    public ResponseEntity<Product> saveProduct(@RequestBody @Valid final ProductDTO productDTO) throws NotFoundException {
-        Product product = this.productService.saveProduct(productDTO);
-        return ResponseEntity.ok(product);
-    }
 }
