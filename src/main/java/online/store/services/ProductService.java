@@ -1,6 +1,5 @@
 package online.store.services;
 
-import online.store.errors.NotFoundException;
 import online.store.model.Author;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
@@ -8,6 +7,7 @@ import online.store.model.constants.ErrorMessages;
 import online.store.model.enumeration.ProductType;
 import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
+import online.store.model.errors.NotFoundException;
 import online.store.repositories.AuthorRepository;
 import online.store.repositories.ProductCategoryRepository;
 import online.store.repositories.ProductRepository;
