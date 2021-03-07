@@ -16,7 +16,7 @@ public class OrderLineDTO {
 
     @NotNull
     private Integer quantity;
-    private BigDecimal totalPrice;
+    private Double totalPrice;
     private Long productId;
     private Long orderId;
     private Long cardId;

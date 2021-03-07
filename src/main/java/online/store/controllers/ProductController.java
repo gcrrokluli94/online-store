@@ -1,5 +1,6 @@
 package online.store.controllers;
 
+import online.store.model.enumeration.DirectionEnum;
 import online.store.model.errors.NotFoundException;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
@@ -53,7 +54,7 @@ public class ProductController {
     }
     @GetMapping("/in-stock-products")
     public ResponseEntity<List<Product>> getInStockProduct(){
-        return ResponseEntity.ok().body(productService.findAvaiableProduct());
+        return ResponseEntity.ok().body(productService.findAvailableProduct());
     }
 
     @GetMapping("/filter-products")
@@ -76,11 +77,6 @@ public class ProductController {
     @GetMapping("/productName-search")
     public ResponseEntity<List<Product>> getProductSearchByName(@RequestParam("productName") final String productName){
         return ResponseEntity.ok().body(productService.findByProductName(productName));
-    }
-
-    @GetMapping("/productNameSearch")
-    public ResponseEntity<List<Product>> getProductSearchByNameNativeQuery(@RequestParam("productName") final String productName){
-        return ResponseEntity.ok().body(productService.findByProductNameNAtiveQuery(productName));
     }
 
     @GetMapping("/product/page")
