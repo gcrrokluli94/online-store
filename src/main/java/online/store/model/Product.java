@@ -23,7 +23,7 @@ public class Product implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "productCategoryId")
+    @JoinColumn(name = "product_category_id")
     private ProductCategory productCategory;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
@@ -41,6 +41,6 @@ public class Product implements Serializable {
     private ProductStatus productStatus;
 
     @ManyToOne
-    @JoinColumn(name = "authorId")
+    @JoinColumn(name = "author_id")
     private Author author;
 }

@@ -22,7 +22,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
 
     @Query(value = "SELECT * FROM product  WHERE p.product_status ='IN_STOK'", nativeQuery = true)
-    List<Product> findAvaiableProduct();
+    List<Product> findAvailableProduct();
 
 
 }
