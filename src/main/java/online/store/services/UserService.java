@@ -12,17 +12,21 @@ import online.store.model.errors.NotFoundException;
 import online.store.repositories.RoleRepository;
 import online.store.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
 @Transactional
 @Slf4j
-public class UserService {
+public class UserService  implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -84,4 +88,12 @@ public class UserService {
         return user;
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<User> user = this.userRepository.findByLogin(username);
+        if(user.isEmpty()){
+            throw new UsernameNotFoundException("User not found");
+        }
+        return user.get();
+    }
 }

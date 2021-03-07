@@ -2,6 +2,7 @@ package online.store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Role implements Serializable {
+public class Role implements Serializable, GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +25,11 @@ public class Role implements Serializable {
     @ManyToMany(mappedBy = "roles",  fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<User> users;
+
+    @Override
+    public String getAuthority() {
+        return name;
+    }
 
 
 }
