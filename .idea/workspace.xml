@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:customer" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:products" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21ba0523-79f9-4541-90d4-55340d0bad4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/OnlineStoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/controllers/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/DTO/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/OrderLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/ProductCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/constants/ErrorMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/enumeration/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/enumeration/PaymentMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/enumeration/ProductType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/model/errors/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/repositories/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/repositories/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/repositories/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/services/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/java/online/store/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online-store/src/test/java/online/store/OnlineStoreApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1p3rYTGnqyThPHUKtMD1i62F2YS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="online.store.model.DTO" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="OnlineStoreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="online.store.OnlineStoreApplication" />
+      <module name="OnlineStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="online.store.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.OnlineStoreApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21ba0523-79f9-4541-90d4-55340d0bad4d" name="Default Changelist" comment="" />
+      <created>1614422661622</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614422661622</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614432760732">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1614432760732" />
+    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1614435510300">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614435510300" />
+    <state width="1322" height="214" key="GridCell.Tab.0.bottom" timestamp="1614436624777">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="214" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614436624777" />
+    <state width="1322" height="214" key="GridCell.Tab.0.center" timestamp="1614436624777">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="214" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614436624777" />
+    <state width="1322" height="214" key="GridCell.Tab.0.left" timestamp="1614436624777">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="214" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614436624777" />
+    <state width="1322" height="214" key="GridCell.Tab.0.right" timestamp="1614436624777">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="214" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614436624777" />
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog" timestamp="1614426717754">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1614426717754" />
+    <state x="511" y="65" key="RollbackChangesDialog" timestamp="1614427229424">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="511" y="65" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1614427229424" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1614438895759">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1614438895759" />
+    <state x="256" y="0" width="587" height="728" key="find.popup" timestamp="1614434935420">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="256" y="0" width="587" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1614434935420" />
+  </component>
+</project>

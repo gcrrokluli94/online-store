@@ -5,6 +5,7 @@ import online.store.model.Author;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.ErrorMessages;
 import online.store.model.Product;
+import online.store.model.enumeration.ProductType;
 import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
 import online.store.repositories.AuthorRepository;
@@ -14,14 +15,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+        @Autowired
+        private ProductRepository productRepository;
 
     @Autowired
     private ProductCategoryRepository productCategoryRepository;
@@ -35,6 +38,17 @@ public class ProductService {
     public List<Product> readAllProducts() {
         return productRepository.findAll();
     }
+
+        public List<Product> findAvaiableProduct(){return productRepository.findAvaiableProduct();}
+
+
+        public List<Product> findProductDifferentAttributes(final String productName,
+                                                            final Double productPrice,
+                                                            final ProductType productType,
+                                                            final String productCategory) {
+        return productRepository.findByProductNameAndPriceAndProductTypeAndProductCategoriesName(productName, productPrice, productType, productCategory);
+
+        }
 
     public Product saveProduct(final ProductDTO productDTO) {
         Product product = new Product();

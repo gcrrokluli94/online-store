@@ -4,6 +4,8 @@ import online.store.errors.NotFoundException;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
 import online.store.model.enumeration.ProductStatus;
+import online.store.model.constants.DirectionEnum;
+import online.store.model.enumeration.ProductType;
 import online.store.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,10 +46,28 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
+    @PostMapping("/user")
+    public ResponseEntity<Product> saveProduct() {
+        return ResponseEntity.ok().body(new Product());
+    }
 
     @PutMapping("productstatus/{productId}")
     public ResponseEntity<Void> deleteProduct(@PathVariable("productId") final Long productId, final ProductStatus productStatus) throws NotFoundException {
         this.productService.deleteProduct(productId, productStatus);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/in_stock_products")
+    public ResponseEntity<List<Product>> getInStockProduct(){
+        return ResponseEntity.ok().body(productService.readAllProduct());
+    }
+
+    @GetMapping("/filter-products")
+    public ResponseEntity<List<Product>> getProductSearchByPage(@RequestParam("productName") final String productName,
+                                                               @RequestParam("productPrice") final Double productPrice,
+                                                               @RequestParam("productType") final ProductType productType,
+                                                               @RequestParam("productCategory") final String productCategory){
+        return ResponseEntity.ok().body(productService.findProductDifferentAttributes(productName, productPrice,productType,productCategory));
+    }
+
+
 }
