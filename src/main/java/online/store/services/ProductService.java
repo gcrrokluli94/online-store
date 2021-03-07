@@ -3,18 +3,14 @@ package online.store.services;
 import online.store.errors.NotFoundException;
 import online.store.model.Author;
 import online.store.model.DTO.ProductDTO;
+import online.store.model.ErrorMessages;
 import online.store.model.Product;
 import online.store.model.ProductCategory;
 import online.store.model.enumeration.ProductStatus;
-import online.store.model.enumeration.constants.DirectionEnum;
-import online.store.model.enumeration.constants.ErrorMessages;
 import online.store.repositories.AuthorRepository;
 import online.store.repositories.ProductCategoryRepository;
 import online.store.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -47,11 +43,9 @@ public class ProductService {
 
         Author author = this.authorRepository.findById(productDTO.getAuthorId())
                 .orElseThrow(() -> new NotFoundException(ErrorMessages.ID_NOT_FOUND_EXCEPTION));
-
         product.setProductName(productDTO.getProductName());
         product.setDescription(productDTO.getDescription());
         product.setPrice(productDTO.getPrice());
-        product.setImageUrl(productDTO.getImageUrl());
         product.setProductStatus(productDTO.getProductStatus());
         product.setProductType(productDTO.getProductType());
         product.setAuthor(author);
@@ -65,7 +59,6 @@ public class ProductService {
         product.setProductName(productDTO.getProductName());
         product.setDescription(productDTO.getDescription());
         product.setPrice(productDTO.getPrice());
-        product.setImageUrl(productDTO.getImageUrl());
         product.setProductType(productDTO.getProductType());
         product.setProductStatus(productDTO.getProductStatus());
         return product;
@@ -82,14 +75,4 @@ public class ProductService {
         product.setProductStatus(productStatus.DELETED);
     }
 
-    public Page<Product> readProductsPageByPage(final Integer page, final Integer count, final DirectionEnum direction, final String... fields) {
-        if (direction == null || fields == null)
-            return this.productRepository.findAll(PageRequest.of(page, count));
-        return this.productRepository.findAll(PageRequest.of(page, count, Sort.Direction.valueOf(direction.name()), fields));
-    }
-
-    public List<Product> sortProducts(final DirectionEnum direction, final String... fields) {
-        List<Product> products = this.productRepository.findAll(Sort.by(Sort.Direction.valueOf(direction.name()), fields));
-        return products;
-    }
 }

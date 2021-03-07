@@ -4,17 +4,16 @@ import online.store.errors.NotFoundException;
 import online.store.model.DTO.ProductDTO;
 import online.store.model.Product;
 import online.store.model.enumeration.ProductStatus;
-import online.store.model.enumeration.constants.DirectionEnum;
 import online.store.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class ProductController {
 
@@ -43,18 +42,6 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProducts() {
         List<Product> products = this.productService.readAllProducts();
         return ResponseEntity.ok(products);
-    }
-
-    @GetMapping("/sort/products")
-    public ResponseEntity<List<Product>> sortProduct(@RequestParam("direction") DirectionEnum direction, @RequestParam("field") String... fields) {
-        List<Product> products = this.productService.sortProducts(direction, fields);
-        return ResponseEntity.ok(products);
-    }
-
-    @GetMapping("/pageable/products")
-    public ResponseEntity<Page<Product>> getProductPageByPage(@RequestParam("page") final Integer page, @RequestParam(value = "count") final Integer count, @RequestParam(value = "direction", required = false) DirectionEnum direction, @RequestParam(value = "field", required = false) String... fields) {
-        Page<Product> productPage = this.productService.readProductsPageByPage(page - 1, count, direction, fields);
-        return ResponseEntity.ok(productPage);
     }
 
 
