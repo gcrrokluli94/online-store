@@ -77,7 +77,7 @@ public class ProductService {
         product.setPrice(productDTO.getPrice());
         product.setProductType(productDTO.getProductType());
         product.setProductStatus(productDTO.getProductStatus());
-        return product;
+        return this.productRepository.save(product);
     }
 
     public Product readProductById(final Long productId) {
